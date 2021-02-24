@@ -3,7 +3,7 @@ import SimpleOpenNI.*;
 SimpleOpenNI kinect;
 
 void setup() {
-    size(1280, 640);
+    size(1280, 480);
     kinect = new SimpleOpenNI(this);
 
     kinect.enableDepth();
@@ -13,7 +13,9 @@ void setup() {
 void draw() {
     kinect.update();
 
-    image(kinect.depthImage(), 0, 0);
-    image(kinect.rgbImage(), 640, 0);
-}
+    PImage depthImage = kinect.depthImage();
+    PImage rgbImage = kinect.rgbImage();
 
+    image(depthImage, 0, 0);
+    image(rgbImage, 640, 0);
+}

@@ -31,11 +31,13 @@ public void setup() {
 public void draw() {
     kinect.update();
 
-    image(kinect.depthImage(), 0, 0);
-    image(kinect.rgbImage(), 640, 0);
-}
+    PImage depthImage = kinect.depthImage();
+    PImage rgbImage = kinect.rgbImage();
 
-  public void settings() {  size(1280, 640); }
+    image(depthImage, 0, 0);
+    image(rgbImage, 640, 0);
+}
+  public void settings() {  size(1280, 480); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "MTS_Project_02" };
     if (passedArgs != null) {
