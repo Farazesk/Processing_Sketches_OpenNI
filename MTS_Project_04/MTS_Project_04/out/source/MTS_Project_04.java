@@ -37,9 +37,10 @@ public void mousePressed() {
     int clickPosition = mouseX + mouseY * width;
     int clickDepth = depthValues[clickPosition];
 
+    float millimeters = depthValues[clickPosition] / 1000.0f;
     float inches = clickDepth / 25.4f;
 
-    println("inches: " + inches);
+    println("m: " + millimeters + ", inches: " + inches);
 }
 
   public void settings() {  size(640, 480); }

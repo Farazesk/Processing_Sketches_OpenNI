@@ -19,8 +19,9 @@ void mousePressed() {
     int clickPosition = mouseX + mouseY * width;
     int clickDepth = depthValues[clickPosition];
 
+    float millimeters = depthValues[clickPosition] / 1000.0;
     float inches = clickDepth / 25.4;
 
-    println("inches: " + inches);
+    println("m: " + millimeters + ", inches: " + inches);
 }
 
